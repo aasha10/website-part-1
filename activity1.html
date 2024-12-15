@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <style>
+            body{
+                margin: 0;
+                font-family: Ariel, Arial, Helvetica, sans-serif;
+                background-color: pink;
+            }
+            .topnav{
+                overflow: hidden;
+                background-color: #333;
+            }
+            .topnav a{
+                float: left;
+                color: #1affa3;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            .topnav a:hover{
+                background-color: #ddd;
+                color: black;
+            }
+            .topnav a.active{
+                background-color: #ffe066;
+                color: black;
+            }
+            .carousel{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+            }
+            .myslides{
+                display: none;
+                max-height: 100%;
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="#home">home</a>
+            <a href="#">about us</a>
+            <a href="#">gallery</a>
+            <a href="#">contact us</a>
+        </div>
+
+        <div class="carousel">
+            <img class="myslides" src="flower.jpg" alt="slide 1">
+            <img class="myslides" src="jpeg-home.jpg" alt="slide 2">
+            <img class="myslides" src="rock.jpg" alt="slide 3">
+        </div>
+
+        <script>
+            var index = 0;
+function carousel(){
+    var i; 
+    var x = document.getElementsByClassName("myslides");
+
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+
+    index++;
+    if(index > x.length){
+        index = 1;
+    }
+
+    x[index - 1].style.display = "block";
+    setTimeout(carousel, 2000);
+}
+carousel();
+        </script>
+    </body>
+</html>
